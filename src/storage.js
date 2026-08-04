@@ -1,0 +1,5 @@
+const KEY='poke-math-state-v1';
+export const defaultState={caught:[],bestTimeMs:null,sessions:0,settings:{additionEnabled:true,subtractionEnabled:true,additionMax:10,subtractionMax:10,uncaughtWeight:5,soundEnabled:true,effectsEnabled:true,parentPin:'1510',rates:{poke:.35,great:.55,ultra:.8,master:1}}};
+export function loadState(){try{const raw=localStorage.getItem(KEY);if(!raw)return structuredClone(defaultState);const p=JSON.parse(raw);return{...structuredClone(defaultState),...p,settings:{...structuredClone(defaultState.settings),...(p.settings||{}),rates:{...defaultState.settings.rates,...(p.settings?.rates||{})}}}}catch{return structuredClone(defaultState)}}
+export function saveState(s){localStorage.setItem(KEY,JSON.stringify(s))}
+export function resetState(){localStorage.removeItem(KEY)}

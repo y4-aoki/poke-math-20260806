@@ -1,0 +1,29 @@
+/* Keep the question area stable whether feedback text is present or not. */
+.question-panel{
+  display:grid;
+  grid-template-rows:auto minmax(44px,auto) 30px;
+  align-content:center;
+  min-height:202px;
+}
+.question-panel .game-message{
+  min-height:30px;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1.2;
+}
+.question-panel .error{
+  position:absolute;
+  left:16px;
+  right:16px;
+  bottom:2px;
+  min-height:0;
+}
+@media(max-height:700px) and (max-width:759px){
+  .question-panel{
+    grid-template-rows:auto minmax(30px,auto) 26px;
+    min-height:164px;
+  }
+  .question-panel .game-message{min-height:26px}
+}

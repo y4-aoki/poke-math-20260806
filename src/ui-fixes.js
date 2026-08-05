@@ -1,0 +1,2 @@
+function updateCaptureGauge(){const gauge=document.querySelector('.capture-info');if(!gauge)return;const text=gauge.querySelector('strong')?.textContent||'0';const rate=Math.min(100,Math.max(0,Number.parseFloat(text)||0));gauge.style.setProperty('--rate',String(rate));gauge.setAttribute('aria-label',`ゲットかくりつ ${rate}%`)}
+const observer=new MutationObserver(updateCaptureGauge);observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true});updateCaptureGauge();

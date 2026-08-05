@@ -1,0 +1,17 @@
+.question-progress{display:grid;gap:5px;min-width:148px;padding:7px 11px;border:2px solid #ffffff66;border-radius:16px;background:#102538e6;color:#fff;box-shadow:0 4px 12px #0015}
+.question-progress strong{font-size:15px;line-height:1;text-align:center}
+.step-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.step-bar i{height:8px;border-radius:999px;background:#ffffff55;box-shadow:inset 0 1px 2px #0014}
+.step-bar i.done{background:#ffdc45}.step-bar i.current{background:#fff;box-shadow:0 0 0 2px #ffdc45,0 0 10px #fff}
+.correct-celebration{position:absolute;inset:0;z-index:5;display:grid;place-items:center;pointer-events:none;overflow:hidden;background:radial-gradient(circle at center,#fffbdbaa 0 8%,#ffd92d55 24%,transparent 58%);animation:celebrationFlash .7s ease both}
+.celebration-message{padding:12px 24px;border:4px solid #fff;border-radius:999px;background:linear-gradient(135deg,#ff6b9b,#ffbd21,#57d96b);color:#fff;font-size:clamp(26px,7vw,48px);font-weight:950;text-shadow:0 3px 0 #a44248;box-shadow:0 0 24px #fff,0 10px 28px #60390066;animation:celebrationPop .65s cubic-bezier(.2,1.6,.4,1) both}
+.sparkles,.sparkles::before,.sparkles::after{position:absolute;inset:0;content:"";background-image:radial-gradient(circle,#fff 0 3px,transparent 4px),radial-gradient(circle,#ffed4a 0 5px,transparent 6px),radial-gradient(circle,#7df8ff 0 4px,transparent 5px);background-position:12% 22%,75% 17%,88% 68%;background-size:37% 37%,43% 43%,31% 31%;animation:sparkleSpin .7s ease-out both}
+.sparkles::before{transform:rotate(55deg)}.sparkles::after{transform:rotate(-48deg)}
+.pokemon-stage.is-correct .ball-deck{z-index:6;animation:ballPowerUp .65s cubic-bezier(.2,1.5,.4,1) both}.pokemon-stage.is-correct .capture-ball{box-shadow:inset -9px -10px 0 #0002,inset 8px 8px 0 #fff8,0 0 18px 8px #fff,0 0 38px 16px #ffdf39}
+.review-screen{min-height:100dvh;display:grid;grid-template-rows:auto auto 1fr;gap:14px;padding:18px;background:linear-gradient(180deg,#73d8ff,#fff3a7)}
+.review-card{width:min(620px,100%);margin:auto;text-align:center}.review-card h1{margin:4px 0}.review-card p{margin:6px 0 12px}
+.review-progress{display:flex;justify-content:center;gap:8px;margin:10px}.review-progress i{width:18px;height:18px;border:3px solid #fff;border-radius:50%;background:#b7c2cc}.review-progress i.done{background:#55c85e}.review-progress i.current{background:#ffca28;box-shadow:0 0 0 4px #ffca2844}
+.review-problem{font-size:clamp(38px,10vw,68px);font-weight:950}.review-problem span{display:inline-block;min-width:1.2ch;color:#1565c0}.review-message{min-height:28px;font-size:20px;font-weight:900;color:#c62828}.review-message.correct{color:#16852a}
+.review-screen .keypad{width:min(620px,100%);margin:auto}
+@keyframes celebrationFlash{0%{opacity:0}18%,78%{opacity:1}100%{opacity:0}}@keyframes celebrationPop{0%{transform:scale(.2) rotate(-12deg)}45%{transform:scale(1.15) rotate(3deg)}100%{transform:scale(1)}}@keyframes sparkleSpin{0%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1}100%{opacity:0;transform:scale(1.35) rotate(70deg)}}@keyframes ballPowerUp{0%{transform:scale(1) rotate(0)}45%{transform:scale(1.35) rotate(15deg)}70%{transform:scale(.92) rotate(-8deg)}100%{transform:scale(1) rotate(0)}}
+@media(prefers-reduced-motion:reduce){.correct-celebration,.celebration-message,.sparkles,.sparkles::before,.sparkles::after,.pokemon-stage.is-correct .ball-deck{animation-duration:.01ms!important}}

@@ -10,3 +10,7 @@ export function captureTranslation(targetRect,ballRect){
     y:targetRect.top+targetRect.height/2-(ballRect.top+ballRect.height/2)
   }
 }
+
+export function isCorrectReviewAnswer(problem,input){
+  return input!==''&&Number(input)===problem.answer
+}
